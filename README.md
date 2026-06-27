@@ -1,37 +1,125 @@
 # 🛡️ CyberSecGPT
 
-An AI-powered Cybersecurity Knowledge Assistant built using Retrieval-Augmented Generation (RAG).
+🛡️ CyberSecGPT
 
-## 🚀 About
+> A Retrieval-Augmented Generation (RAG) assistant that answers cybersecurity questions using uploaded PDF documents.
 
-CyberSecGPT allows users to upload cybersecurity documents such as OWASP guides, CEH notes, and research papers, then ask questions in natural language and receive context-aware answers with source citations.
+---
 
-## 🎯 Goals
+## 🚀 Features
 
-- Upload PDFs
-- Extract text
-- Create embeddings
-- Store embeddings in ChromaDB
-- Perform semantic search
-- Generate answers using Gemini
-- Display source references
-- Quiz Mode
-- Interview Mode
-- Flashcard Generation
+- ✅ PDF Reader
+- ✅ Intelligent Chunking
+- ✅ Overlap Support
+- ✅ Input Validation
+- 🔄 Embedding Generation (In Progress)
+- ⏳ Vector Database
+- ⏳ Semantic Search
+- ⏳ AI Question Answering
+
+---
+
+## 🏗️ Project Structure
+
+...
+
+---
+
+## 📅 Development Progress
+
+### Day 1
+- Project setup
+- GitHub repository
+- Virtual environment
+
+### Day 2
+- PDF Reader
+
+### Day 3
+- Chunking
+- Overlap
+- Edge case handling
+
+### Day 4 (Current)
+- Beginning Embeddings
+
+---
 
 ## 🛠️ Tech Stack
 
-- Python
-- Streamlit
-- LangChain
-- ChromaDB
-- Sentence Transformers
-- Google Gemini API
+Python
+PyPDF
+Git
+GitHub
 
-## 📈 Project Status
+Coming Soon:
+Sentence Transformers
+ChromaDB
+Ollama
 
-🚧 Phase 1 — Project Setup (In Progress)
+---
 
-## 📅 Development Journey
+## 🎯 Goal
 
-This repository is being built publicly from scratch as a learning project to understand AI Engineering, RAG pipelines, vector databases, and cybersecurity-focused LLM applications.
+Build a production-quality RAG application from scratch to deeply understand embeddings, vector databases, semantic search, and LLM integration instead of relying only on high-level frameworks.🛡️ CyberSecGPT
+
+> A Retrieval-Augmented Generation (RAG) assistant that answers cybersecurity questions using uploaded PDF documents.
+
+---
+
+## 🚀 Features
+
+- ✅ PDF Reader
+- ✅ Intelligent Chunking
+- ✅ Overlap Support
+- ✅ Input Validation
+- 🔄 Embedding Generation (In Progress)
+- ⏳ Vector Database
+- ⏳ Semantic Search
+- ⏳ AI Question Answering
+
+---
+
+## 🏗️ Project Structure
+
+...
+
+---
+
+## 📅 Development Progress
+
+### Day 1
+- Project setup
+- GitHub repository
+- Virtual environment
+
+### Day 2
+- PDF Reader
+
+### Day 3
+- Chunking
+- Overlap
+- Edge case handling
+
+### Day 4 (Current)
+- Beginning Embeddings
+
+---
+
+## 🛠️ Tech Stack
+
+Python
+PyPDF
+Git
+GitHub
+
+Coming Soon:
+Sentence Transformers
+ChromaDB
+Ollama
+
+---
+
+## 🎯 Goal
+
+Build a production-quality RAG application from scratch to deeply understand embeddings, vector databases, semantic search, and LLM integration instead of relying only on high-level frameworks.
