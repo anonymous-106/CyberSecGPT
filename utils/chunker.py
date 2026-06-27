@@ -11,11 +11,12 @@ def create_chunks(all_text, chunk_size, overlap_size):
         raise ValueError("overlap_size must be less than chunk_size")
     if len(words) == 0:
         return [] 
+    else:
+        text_length = len(words)
+        while start < text_length:
+            chunk_words = words[start:start + chunk_size]
+            chunk = " ".join(chunk_words)
+            chunks.append(chunk)
+            start += chunk_size - overlap_size
     
-    text_length = len(words)
-    while start < text_length:
-        chunk_words = words[start:start + chunk_size]
-    chunk = " ".join(chunk_words)
-    chunks.append(chunk)
-    start += chunk_size - overlap_size
     return chunks   
