@@ -11,8 +11,8 @@
 * ✅ Configurable Chunk Overlap
 * ✅ Input Validation & Edge Case Handling
 * ✅ Embedding Generation (Sentence Transformers)
-* 🔄 Vector Database Integration (In Progress)
-* ⏳ Semantic Search
+* ✅ ChromaDB Integration
+* 🔄 Semantic Search (In Progress)
 * ⏳ AI Question Answering
 
 ---
@@ -22,13 +22,15 @@
 ```text
 CyberSecGPT/
 │
-├── uploads/              # Uploaded PDF files
-├── utils/
-│   ├── pdf_reader.py     # Extract text from PDFs
-│   ├── chunker.py        # Chunk creation with overlap & validation
-│   └── embeddings.py     # Generate vector embeddings
+├── uploads/
 │
-├── app.py                # Main application
+├── utils/
+│   ├── pdf_reader.py
+│   ├── chunker.py
+│   ├── embeddings.py
+│   └── database.py
+│
+├── app.py
 ├── requirements.txt
 └── README.md
 ```
@@ -40,28 +42,36 @@ CyberSecGPT/
 ### ✅ Day 1
 
 * Project setup
-* GitHub repository initialization
+* GitHub repository
 * Python virtual environment
 
 ### ✅ Day 2
 
-* Implemented PDF Reader
+* Built PDF Reader
 * Extracted text from uploaded PDF files
 
 ### ✅ Day 3
 
-* Built configurable text chunking
-* Added overlap support
+* Implemented intelligent text chunking
+* Added configurable overlap support
 * Implemented validation and edge case handling
-* Tested chunk generation with different configurations
+* Tested multiple chunking scenarios
 
 ### ✅ Day 4
 
 * Integrated Sentence Transformers
 * Generated embeddings using `all-MiniLM-L6-v2`
-* Successfully converted text chunks into 384-dimensional vectors
+* Converted text chunks into 384-dimensional vectors
 * Verified embedding generation and output format
-* Prepared architecture for vector database integration
+
+### ✅ Day 5
+
+* Integrated ChromaDB
+* Created vector database client
+* Created document collection
+* Stored chunk IDs, documents, and embeddings
+* Successfully indexed all generated chunks
+* Prepared retrieval pipeline for semantic search
 
 ---
 
@@ -73,14 +83,15 @@ CyberSecGPT/
 * PyPDF
 * NumPy
 * Sentence Transformers
+* ChromaDB
 * Git
 * GitHub
 
 ### Coming Soon
 
-* ChromaDB
-* Ollama
-* Semantic Search Pipeline
+* Semantic Search
+* Ollama Integration
+* Retrieval-Augmented Generation (RAG) Pipeline
 
 ---
 
@@ -89,35 +100,35 @@ CyberSecGPT/
 Build a production-quality Retrieval-Augmented Generation (RAG) application completely from scratch to deeply understand:
 
 * PDF Processing
-* Text Chunking
+* Intelligent Chunking
 * Embedding Generation
 * Vector Databases
 * Semantic Search
 * LLM Integration
 
-Instead of relying solely on high-level frameworks, this project focuses on understanding how every component works under the hood.
+The objective is to understand every component under the hood instead of relying only on high-level frameworks.
 
 ---
 
-## 🚧 Current Progress
+## 🚧 Current Pipeline
 
 ```text
 PDF
  │
  ▼
-Read Text
+Read Text ✅
  │
  ▼
-Chunk Text
+Chunk Text ✅
  │
  ▼
 Generate Embeddings ✅
  │
  ▼
-Store in ChromaDB ⏳
+Store in ChromaDB ✅
  │
  ▼
-Semantic Search ⏳
+Semantic Search 🔄
  │
  ▼
 LLM Response ⏳
