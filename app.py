@@ -1,3 +1,4 @@
+from utils.database import retrieve
 from utils.pdf_reader import read_pdf
 from utils.chunker import create_chunks
 from utils.embeddings import embed
@@ -5,34 +6,39 @@ from utils.database import store_chunk
 from utils.database import count_chunks
 from utils.database import retrieve
 
-text = read_pdf("uploads/ECCU-Catalog-2025.pdf")
 
-chunks = create_chunks(text, chunk_size=100, overlap_size=20)
+def index_pdf():
+    text = read_pdf("uploads/ECCU-Catalog-2025.pdf")
 
-# print(f"Total Chunks: {len(chunks)}")
+    chunks = create_chunks(text, chunk_size=100, overlap_size=20)
 
-# for i in range(5):
-#     print(f"\n{'=' * 20} Chunk {i+1} {'=' * 20}")
-#     print(chunks[i])
+    for i, chunk in enumerate(chunks):
+        embedding = embed(chunk)
 
-embedding = embed(chunks[0])
+        store_chunk(
+            id=f"chunk_{i}",
+            chunk=chunk,
+            embedding=embedding
+        )
 
-# print(type(embedding))
-# print(len(embedding))
-# print(embedding[:10])
+    print("PDF Indexed Successfully!")
+    print(f"Total chunks stored: {count_chunks()}")
 
-for i, chunk in enumerate(chunks):
-    embedding = embed(chunk)
 
-    store_chunk(
-        id=f"chunk_{i}",
-        chunk=chunk,
-        embedding=embedding
-    )
+def ask_question():
+    question = input("Ask a CyberSecurity question: ")
 
-# print("Finished storing all chunks!")
-print(f"Total chunks stored: {count_chunks()}")
+    question_embedding = embed(question)
 
-question = input("Ask a CyberSecurity question: ")
-result = retrieve(question)
-print (result)
+    result = retrieve(question_embedding)
+
+    print(result)
+
+
+while True:
+    print("\n===== CyberSecGPT =====")
+    print("1. Index PDF")
+    print("2. Ask Question")
+    print("3. Exit")
+
+    choice = input("Enter choice: ")
