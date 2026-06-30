@@ -3,7 +3,7 @@ from utils.chunker import create_chunks
 from utils.embeddings import embed
 from utils.database import store_chunk
 from utils.database import count_chunks
-
+from utils.database import retrieve
 
 text = read_pdf("uploads/ECCU-Catalog-2025.pdf")
 
@@ -32,3 +32,7 @@ for i, chunk in enumerate(chunks):
 
 # print("Finished storing all chunks!")
 print(f"Total chunks stored: {count_chunks()}")
+
+question = input("Ask a CyberSecurity question: ")
+result = retrieve(question)
+print (result)
